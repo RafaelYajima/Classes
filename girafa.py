@@ -1,7 +1,8 @@
+import time
+from random import choice
 
 class Girafa:
     # Propriedades
-
 
     # O metodo __init__ é executado quando a classe é instanciada
     def __init__(self, nome, altura, cor, idade, origem):
@@ -13,7 +14,10 @@ class Girafa:
         self.__fome = 100
 
     def andar(self):
-        print(self.nome, "está andando...")
+        if self.__fome > 60:
+            print(self.nome, "esta com muita fome para andar!")
+        else:
+            print(self.nome, "está andando...")
 
     def comer(self, alimento):
         lista_alimentos = ['folhas', 'frutas', 'plantas']
@@ -25,9 +29,9 @@ class Girafa:
 
     def fome(self):
         if self.__fome > 60:
-            print(self.nome, "está morrendo de fome")
+            print(self.nome, "está morrendo de fome!")
         elif self.__fome > 40:
-            print(self.nome, "está com fome")
+            print(self.nome, "está com fome!")
         elif self.__fome > 20:
             print(self.nome, "está saciada")
         elif self.__fome > 10:
@@ -35,12 +39,22 @@ class Girafa:
         elif self.__fome < 0:
             print(self.nome, "está explodindo")
 
-    def andar(self):
-        if self.__fome > 60:
-            print(self.nome, "não pode andar")
-
     def respira(self):
-        print()
+        print(self.nome, "Inspira...")
+        time.sleep(2)
+        print(self.nome, "Expira...")
 
-    def reproduz(self):
-        print()
+    # Função para reproduzir girafas, recebe um parceiro e retorna um filhote
+    def reproduz(self, parceiro):
+        if not isinstance(parceiro, Girafa):
+            print(self.nome, "sai correndo dessesperado")
+        
+        nome = "Filhote de " + self.nome
+        altura = (self.altura + parceiro.altura) / 2
+        idade = 1
+        cor = choice([self, parceiro]).cor
+        origem = self.origem
+
+        filhote = Girafa(nome, altura, idade, cor, origem)
+
+        return filhote
