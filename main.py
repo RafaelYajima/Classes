@@ -7,5 +7,14 @@ print(girafa.nome)
 girafa2.comer('folhas')
 girafa2.comer('folhas')
 girafa2.comer('folhas')
-girafa2.comer('folhas')
-girafa2.comer('folhas')
+
+girafa2.fome()
+girafa2.andar()
+girafa2.respira()
+
+filhote = girafa2.reproduz(girafa)
+
+print(filhote.nome)
+filhote.fome()
+filhote.andar()
+filhote.respira()
