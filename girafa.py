@@ -36,7 +36,8 @@ class Girafa:
             print(self.nome, "está explodindo")
 
     def andar(self):
-        print()
+        if self.__fome > 60:
+            print(self.nome, "não pode andar")
 
     def respira(self):
         print()
