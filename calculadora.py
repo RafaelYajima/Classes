@@ -1,4 +1,3 @@
-
 class Calculadora:
     
     def __init__(self):
@@ -6,21 +5,28 @@ class Calculadora:
         self.n2 = 0
 
     def somar(self):
+        self.verifica_numeros()
         return self.n1 + self.n2
 
     def multiplicar(self):
+        self.verifica_numeros()
         return self.n1 * self.n2
 
     def dividir(self):
+        self.verifica_numeros()
+
         if self.n2 == 0:
             print("Não é possivel dividir por zero")
             return
         return self.n1 / self.n2
 
     def elevar(self):
+        self.verifica_numeros()
+    
         return self.n1 ** self.n2
     
     def subtractir(self):
+        self.verifica_numeros()
         return self.n1 - self.n2
     
     def verifica_numeros(self):
